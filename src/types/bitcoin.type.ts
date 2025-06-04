@@ -30,3 +30,32 @@ export interface NetworkInfo {
   relayfee: number;
   warnings: string;
 }
+
+
+export interface Block {
+    hash: string;
+  confirmations: number;
+  size: number;
+  height: number;
+  version: number;
+  versionHex: string;
+  merkleroot: string;
+  tx: string[];
+  time: number;
+  nonce: number;
+  bits: string;
+  difficulty: number;
+  previousblockhash?: string;
+  nextblockhash?: string;
+}
+
+export interface RawTransaction {
+   txid: string;
+  hash: string;
+  size: number;
+  version: number;
+  locktime: number;
+  vin: any[];
+  vout: any[];
+  hex?: string;
+}

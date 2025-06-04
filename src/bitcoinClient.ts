@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BlcockchainInfo, NetworkInfo } from "./types/bitcoin.type";
+import { BlcockchainInfo, NetworkInfo, Block, RawTransaction } from "./types/bitcoin.type";
 
 
 export class BitcoinClient {
@@ -31,10 +31,30 @@ export class BitcoinClient {
   }
 
   async getBlockChainInfo(): Promise<BlcockchainInfo> {
-    return this.call('getblockchaininfo')
+    return this.call('getblockchaininfo');
   }
 
   async getnetworkinfo(): Promise<NetworkInfo> {
-    return this.call('getnetworkinfo')
+    return this.call('getnetworkinfo');
   }
+
+ async getblockcount (): Promise<Number>{
+    return this.call('getblockcount');
+  }
+
+async getblockhash(height: number): Promise<String> {
+  return this.call('getblockhash', [height]);
 }
+
+async getBlock(hash: string): Promise<Block> {
+  return this.call('getblock', [hash])
+}
+
+async getRawTransaction(txid: string, verbose = true): Promise<RawTransaction>{
+  return this.call("getrawtransaction", [txid, verbose ? 1: 0])  
+}
+
+}
+
+
+ 
