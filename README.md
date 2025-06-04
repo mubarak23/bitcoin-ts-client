@@ -1,6 +1,3 @@
-
-
-
 # Bitcoin JSON-RPC Client (TypeScript)
 
 A lightweight, type-safe, and modern TypeScript client for interacting with a [Bitcoin Core](https://bitcoincore.org/en/) node using JSON-RPC.
@@ -27,7 +24,7 @@ A lightweight, type-safe, and modern TypeScript client for interacting with a [B
 npm install bitcoin-ts-client
 # or
 yarn add bitcoin-ts-client
-````
+```
 
 ---
 
@@ -38,8 +35,8 @@ import { BitcoinClient } from 'bitcoin-ts-client';
 
 const client = new BitcoinClient(
   'http://localhost:8332', // RPC URL
-  'rpcuser',               // RPC Username
-  'rpcpassword'            // RPC Password
+  'rpcuser', // RPC Username
+  'rpcpassword' // RPC Password
 );
 
 // Example: Get blockchain info
@@ -57,13 +54,20 @@ main();
 
 You can call common Bitcoin Core RPC methods like:
 
-* `getBlockchainInfo()`
-* `getNetworkInfo()`
-* `getBlockCount()`
-* `getBlockHash(height)`
-* `getBlock(hash)`
-* `getRawTransaction(txid, verbose)`
-* `getNewAddress(label?, addressType?)`
+- `getBlockchainInfo()`
+- `getNetworkInfo()`
+- `getBlockCount()`
+- `getBlockHash(height)`
+- `getBlock(hash)`
+
+Additional methods like:
+
+- `getRawTransaction(txid, verbose)`
+- `getNewAddress(label?, addressType?)`
+- `createWallet(txid, verbose)`
+- `getNewAddress(label?, addressType?)`
+
+are currently in progress.
 
 > Want to request support for more methods? Open an issue or contribute!
 
@@ -120,22 +124,18 @@ Please make sure to run tests and follow the coding style before submitting.
 
 ## 🧠 Resources
 
-* [Bitcoin Core RPC Documentation](https://developer.bitcoin.org/reference/rpc/index.html)
-* [Bitcoin GitHub](https://github.com/bitcoin/bitcoin)
-* [TypeScript](https://www.typescriptlang.org/)
+- [Bitcoin Core RPC Documentation](https://developer.bitcoin.org/reference/rpc/index.html)
+- [Bitcoin GitHub](https://github.com/bitcoin/bitcoin)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ---
 
 ## 👥 Authors
 
-* [Mubarak Aminu](https://github.com/mubrak23)
+- [Mubarak Aminu](https://github.com/mubrak23)
 
 ---
 
 ## 📬 Support
 
 If you find this project useful, give it a ⭐ on [GitHub](https://github.com/mubarak23/bitcoin-ts-client). For support, open an [issue](https://github.com/YOUR_GITHUB_USERNAME/bitcoin-ts-client/issues).
-
-
-
-
